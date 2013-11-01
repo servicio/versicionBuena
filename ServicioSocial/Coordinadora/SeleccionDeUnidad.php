@@ -3,8 +3,7 @@
 include '../DaoConnection/coneccion.php';
 $cn = new coneccion();
 $materia =$_GET["materia"];
-$curso = $_GET["Curso"];
-$TipoCurso = $_GET["TipoCurso"];
+$maestro = $_GET["maestro"];
 //utf8_decode($materia);
 //$sql = "SELECT * from materias WHERE materia = 'Taller de Herramientas Intelectuales'";
 $sql = "SELECT id from materias WHERE materia = '$materia'";
@@ -17,28 +16,22 @@ $id =   $fila["id"];
 
 
 
- $sql = "   SELECT Distinct m.maestro, m.id
-FROM calificacionesactual c
-JOIN maestros m
-ON m.id = c.idMaestro
-JOIN materiasmaestros mm
-ON mm.idMaestro = m.id and c.idMateria = mm.idMaterias
-WHERE c.CursoEscolar = $curso and c.TipoCurso = $TipoCurso and c.idMateria = $id";
+ $sql = "SELECT unidad from calificacionesactual WHERE idMateria = '$id' and  idMaestro = '$maestro'";
     $datos = mysql_query($sql, $cn->Conectarse());
     if($datos == 0){                       
-     echo '<select id="materia" name="materia" >
-          <option>Seleccione un maestro</option>
+     echo '<select id="materia" name="materia" ">
+          <option>Seleccione una unidad</option>
           </select>';
     }
     else
     {
         
-        echo "<select name='materia' id='materia'  >";
-    echo"<option>Seleccione Maestro</option>";
+        echo "<select name='materia' id='materia'  '>";
+    echo"<option>Seleccione una unidad</option>";
         While ($rs = mysql_fetch_array($datos)) {
                                 ?>
 
-                                <option value="<?php echo $rs["id"]; ?>"><?php echo $rs["maestro"] ?></option>
+                                <option value="<?php echo $rs["unidad"]; ?>"><?php echo $rs["unidad"] ?></option>
                                 <?php
                             }
                             echo "</select>";
