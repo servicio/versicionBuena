@@ -1,4 +1,10 @@
-<?php include './plantillaEncabezado.php'; ?>
+
+<?php 
+include './validacionseSession.php';
+$verif = new validacionseSession();
+$verif->verificacionDeLogue();
+include './plantillaEncabezado.php';
+?>
 <script>
 
     function quitarEspacion(cadena) {
