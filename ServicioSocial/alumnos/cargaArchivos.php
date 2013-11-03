@@ -41,29 +41,43 @@ if ($_REQUEST['guardaarchivo'] != null) {
     <script>$(document).ready(function() {
             $('input[type=file]').bootstrapFileInput();
         });</script>
+    <style>
+        .stlconten{
+            background-color: white;
+            -webkit-background-size: cover; 
+            -moz-background-size: cover; 
+            -o-background-size: cover; 
+            background-size: cover;
+            margin-top: -20px
+        }
+    </style>
 
-    <div class="container" style="background-image: url(galeria/fondotextofinal.png);-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-top: -20px">
+    <div class="container stlconten">
         <div class="span12" style="margin: auto">
-            <form name="subearchivos" action="cargaArchivos.php" method="post" enctype="multipart/form-data" style="margin-left: 50px; margin-top: 50px">
+            <form name="subearchivos" action="cargaArchivos.php" method="post" enctype="multipart/form-data" style="margin: 3% 3% 3% 3%">
                 <h3>Tamaño maximo de los archivos: 700kb</h3>
                 <div class="btn-group">
                     <input type="file" name="buscaarchivo" size="200" accept="application/pdf" title="Buscar Archivo">
                     <input type="submit" name="guardaarchivo" value="Enviar" class="btn btn-primary">
                 </div>
 
-                <!-----------------------Mostrar archivos subidos--------------------------------------->
-                <?php
-                $sql = "SELECT * FROM cargaarchivos WHERE usuario='$usuario'";
-                $datos = mysql_query($sql, $cn->Conectarse());
-                while ($rs = mysql_fetch_array($datos)) {
-                    echo "<li><a target='_blank' href='" . $rs[2] . "'</a>" . $rs[3] . "</li>\n";
-                }
-                $cn->cerrarBd();
-                ?>
-                <!-------------------------------------------------------------->
-            </form>
+                <div class="well well-sm" style="margin-top: 20px">
+                    <!-----------------------Mostrar archivos subidos--------------------------------------->
+                    <?php
+                    $sql = "SELECT * FROM cargaarchivos WHERE usuario='$usuario'";
+                    $datos = mysql_query($sql, $cn->Conectarse());
+                    while ($rs = mysql_fetch_array($datos)) {
+                        echo "<li><a target='_blank' href='" . $rs[2] . "'</a>" . $rs[3] . "</li>\n";
+                    }
+                    $cn->cerrarBd();
+                    ?>
+                    <!-------------------------------------------------------------->
+                </div>
+
         </div>
-    </div>
+    </form>
+</div>
+</div>
 </html>
 <?php
 include './plantillaFooter.php';
