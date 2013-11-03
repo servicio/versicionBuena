@@ -3,10 +3,12 @@
 session_start();
 include '../clases/usuario.php';
 include '../Dao/daoServicio.php';
+include '../Utilerias/generarPass.php';
+$utilierias = new Utilerias();
 $usuario = new usuario();
 $dServicio = new daoServicio();
 $usuario->setUsuario($_GET["usua"]);
-$usuario->setPass($_GET["pass"]);
+$usuario->setPass($utilierias->genera_md5($_GET["pass"]));
 $valido =  $dServicio->accesoAlumnos($usuario);
 if ($valido == false) {
     echo '
@@ -24,7 +26,7 @@ if ($valido == false) {
     $_SESSION["UsuarioAlumno"] = $usuario->getUsuario();
     echo "
         <script>
-             document.location.href='plantilla.php';
+             document.location.href='index.php';
         </script>
          ";
 }

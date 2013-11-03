@@ -1,4 +1,5 @@
 <?php
+session_start();
 include './validacionseSession.php';
 $validacion = new validacionseSession();
 $validacion->verificacionSession();
