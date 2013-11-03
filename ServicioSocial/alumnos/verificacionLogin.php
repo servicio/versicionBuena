@@ -27,7 +27,7 @@ if ($valido == false) {
     $_SESSION["UsuarioAlumno"] = $usurioRespaldo;
     echo "
         <script>
-             document.location.href='plantilla.php';
+             document.location.href='index.php';
         </script>
          ";
 }
