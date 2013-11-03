@@ -10,8 +10,7 @@ class validacionseSession {
             echo "
         <script>
              document.location.href='LoginAlumno.php';
-        </script>
-         ";
+        </script>";
             header('Location: login.php');
         }
     }
