@@ -23,7 +23,17 @@ $validacion->verificacionDeLogueAlumnos();
         });
     });
 </script>
-<div class="container" style="background-image: url(galeria/fondotextofinal.png);-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-top: -20px"> 
+<style>
+    .stlconten{
+        background-color: white;
+        -webkit-background-size: cover; 
+        -moz-background-size: cover; 
+        -o-background-size: cover; 
+        background-size: cover;
+        margin-top: -20px
+    }
+</style>
+<div class="container stlconten"> 
     <div class="span12" style="margin: auto">
         <?php
         $usuario = $_SESSION["UsuarioAlumno"];

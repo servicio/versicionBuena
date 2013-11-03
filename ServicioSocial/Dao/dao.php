@@ -3,7 +3,26 @@
 include '../DaoConnection/coneccion.php';
 
 class dao {
-   function Intercambiomaterias($matricula, $materia, $semestre, $control, $obligatorias, $idMateria) {
+    function guardarAlumnoGrupo(alumnosinscritos $A){
+        $cn = new coneccion();
+         $sql = "INSERT INTO alumnosinscritos(idGrupo,usuario, idMateria) 
+VALUES (
+'" . $A->getIdGrupo() . "', '" . $A->getUsuario() . "','" . $A->getIdMateria() . "'
+)";
+         mysql_query($sql, $cn->Conectarse());
+         $cn->cerrarBd();
+    }
+    
+    function  guardarNuevoGrupo(crearGrupo $C){
+        $cn = new coneccion();
+         $sql = "INSERT INTO gruposalumnos( nombreGrupo,idMateria, idMaestro) 
+VALUES (
+'" . $C->getNombreGrupo() . "', '" . $C->getIdMateria() . "','" . $C->getIdMaestro() . "'
+)";
+         mysql_query($sql, $cn->Conectarse());
+         $cn->cerrarBd();
+    }
+            function Intercambiomaterias($matricula, $materia, $semestre, $control, $obligatorias, $idMateria) {
         $cn = new coneccion();
         $fecha = date("Y-m-d");
         utf8_encode($materia);
