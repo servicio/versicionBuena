@@ -10,7 +10,6 @@ class Utilerias {
 //        return substr(eregi_replace($exp_reg, "", md5(rand())) .
 //                eregi_replace($exp_reg, "", md5(rand())) .
 //                eregi_replace($exp_reg, "", md5(rand())), 0, $longitud);
-
             return substr(eregi_replace($exp_reg, "", md5(rand())), 0, $longitud);
         }
     }

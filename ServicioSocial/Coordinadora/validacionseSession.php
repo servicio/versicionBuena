@@ -7,6 +7,10 @@ class validacionseSession {
     function verificacionDeLogue() {
         $usuario = $_SESSION['Usuario'];
         if ($usuario == null) {
+            echo "
+        <script>
+             document.location.href='LoginAlumno.php';
+        </script>";
             header('Location: login.php');
         }
     }

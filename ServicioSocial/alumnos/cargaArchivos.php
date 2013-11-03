@@ -20,7 +20,7 @@ if ($_REQUEST['guardaarchivo'] != null) {
     if (is_uploaded_file($ruta) && $tamañoarchivo >= $tamañomaximo) {
         echo "Archivo muy grnade<BR>";
         echo "El tamaÑo de tu archivo = " . $tamañoarchivo;
-        echo " K";
+        echo "K";
     } else {
 //        if (is_uploaded_file($ruta)) {
         if (copy($ruta, $ubicacion)) {

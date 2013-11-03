@@ -3,10 +3,13 @@
 session_start();
 include '../clases/usuario.php';
 include '../Dao/daoServicio.php';
+include '../Utilerias/generarPass.php';
 $usuario = new usuario();
+$utilierias = new Utilerias();
 $dServicio = new daoServicio();
 $usuario->setUsuario($_GET["usua"]);
-$usuario->setPass($_GET["pass"]);
+$usuario->setPass($utilierias->genera_md5($_GET["pass"]));
+//$usuario->setPass($_GET["pass"]);
 $paso = $dServicio->verificacion_de_ingresoMaestros($usuario);
 if ($paso == false) {
     echo '
