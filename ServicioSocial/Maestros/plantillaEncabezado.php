@@ -54,7 +54,7 @@
                         <li class="divider-vertical"></li>
                         <li><a href="reporteSession.php">Session de Tutorias</a> </li>
                         <li class="divider-vertical"></li>
-                        <li><a href="notasAlumnos.php">Notas Alumnos</a> </li>
+                        <li><a href="notasAlumnos.php">Consultas Alumnos</a> </li>
                         <li class="divider-vertical"></li>
                         <li><a href="cerrarSesion.php">Cerrar Sessión</a> </li>
                     </ul>
