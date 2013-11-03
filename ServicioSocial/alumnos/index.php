@@ -9,7 +9,6 @@ $usuario = $_SESSION["Usuario"];
 $datos = mysql_query($sql, $cn->Conectarse());
 $cn->cerrarBd();
 ?>
-
 <div class="container">
 
     <center>

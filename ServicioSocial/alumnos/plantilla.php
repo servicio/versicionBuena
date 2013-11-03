@@ -20,7 +20,7 @@
                 -moz-background-size: cover;
                 -o-background-size: cover;
                 background-size: cover;
-                height: 40%;
+                height: 38%;
                 border-radius: 5px;
             }
         </style>
@@ -47,13 +47,6 @@
                         <!--                        Be sure to leave the brand out there if you want it shown -->
                         <ul class="nav">
                             <li><a href="index.php">Inicio</a></li>
-                            <!--                            <li class="dropdown">
-                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panel de usuario<b class="caret"></b></a>
-                                                            <ul class="dropdown-menu">
-                                                                <li><a href="perfil.php">Editar perfil</a></li>
-                                                                <li><a href="cerrarSesion.php">Cerrar sesion</a></li>
-                                                            </ul>
-                                                        </li>-->
                         </ul>
                         <!--                        Everything you want hidden at 940px or less, place within here -->
                         <div class="nav-collapse collapse">
@@ -68,18 +61,16 @@
                                 <li><a href="cargaMaterias.php">Creacion de grupos</a> </li>
                                 <li class="divider-vertical"></li>
                                 <li><a href="encuestaTutorias.php">Tutorias</a> </li>
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panel de usuario<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="perfil.php">Editar perfil</a></li>
+                                        <li><a href="cerrarSesion.php">Cerrar sesion</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
-                        <ul class="nav">
-                            <li class="divider-vertical"></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panel de usuario<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="perfil.php">Editar perfil</a></li>
-                                    <li><a href="cerrarSesion.php">Cerrar sesion</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

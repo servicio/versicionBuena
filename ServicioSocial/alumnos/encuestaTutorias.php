@@ -38,7 +38,7 @@ include '../Dao/daoServicio.php';
             background: #ddd;
         }
         tr:first-child, tr:first-child {
-            background: #283a59;
+            background: #555;
             color:white;
         }
         table td:empty {
@@ -53,8 +53,7 @@ include '../Dao/daoServicio.php';
             float:left
         }
     </style>
-
-    <div class="container" style="background-image: url(galeria/fondotextofinal.png);-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-top: -20px"> 
+    <div class="container" style="background-color: white; margin-top: -20px"> 
         <div class="span12" style="margin: auto">
             <form name="cuestionario" action="guardarEncuesta.php" style="margin-left: 50px; margin-top: 50px">
                 <h3>Encuesta bla bla bla...</h3>
