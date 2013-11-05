@@ -1,43 +1,55 @@
+<!--Re:-->
 <?php
-require ("class.phpmailer.php");
-require ("class.smtp.php");
-$mail = new PHPMailer(TRUE); //Objeto de PHPMailer
 
-include '../../Utilerias/generarPass.php';
+include "../../Utilerias/generarPass.php";
+include "./class.phpmailer.php";
+include "./class.smtp.php";
+include '../DaoConnection/coneccion.php';
+
+$usuari = $_GET["nombre"];
+$cn = new coneccion();
+$sql = "SELECT * FROM datosregistrousuario WHERE usuario='$usuari'";
+$datos = mysql_query($sql, $cn->Conectarse());
+
+while ($rs = mysql_fetch_array($datos)) {
+     $rs[6];
+}
+
+
 $genera = new Utilerias();
-$pass = $genera->genera_password();
-//$md5 = $genera->genera_md5($pass);
+$pass = $genera->genera_password(6, $tipo = "alfanumerico");
+$de = "shanaxchornos@gmail.com";
+$para = "racoonmx@hotmail.com"; //$_GET["email"];
+$asunto = "Contraseña";
+$mensaje = "Tu password unico: $pass";
+$cabeceras = "MIME-Version: 1.0\r\n";
+$cabeceras .= "Content-type: text/html; charset=ISO-8859-1\r\n";
+$cabeceras .= "From: $de \r\n";
 
-$de = 'coordinacion';
-$para="jose_eslifer_23@hotmail.com";//$_GET["email"];
-$asunto = 'Contraseña';
-$mensaje = $pass;
 
-//$cabeceras = "MIME-Version: 1.0\r\n";
-//$cabeceras .= "Content-type: text/html; charset=ISO-8859-1\r\n";
-//$cabeceras .= "From: $de \r\n";
 ////Trabajando con PHPMailer
-$mail->IsHTML=true;  
-$mail->IsSMTP;
-$mail->SmtpConnect();
-$mail->Helo = "www.hotmail.com.mx";
-$mail->SMTPAuth = "true"; //Autentificacion de SMTP
-$mail->SMTPSecure = "tls"; //SSL socket layer
-$mail->Host = "smtp.live.com"; //Servidor de SMTP 
+$mail = new PHPMailer();
+$mail->IsSMTP();
+$mail->IsHTML = true;
+$mail->SMTPAuth = true; //Autentificacion de SMTP
+$mail->SMTPSecure = "ssl"; //SSL socket layer
+$mail->Host = "smtp.gmail.com"; //Servidor de SMTP 
 $mail->Port = 465; // 465
 $mail->From = $de; //Remitente (En mi variable)
 $mail->AddAddress($para); //Destinatario
-$mail->Username = "beliko00@hotmail.com"; 
-$mail->Password = 'guadalupe23'; //Aqui va la contraseña valida de tu correo
+$mail->Username = "shanaxchornos@gmail.com";
+$mail->Password = "catscagats"; //Aqui va la contraseña valida de tu correo
 $mail->Subject = $asunto; //El asunto de correo
-$mail->Body = $pass;//$mensaje; //El mensaje de correo
+$mail->Body = $pass; //$mensaje; //El mensaje de correo
 $mail->WordWrap = 50; //# de columnas
-$mail->MsgHTML = $mensaje; //Se indica que el cuerpo del correo tendra formato HTML
+$mail->MsgHTML($mensaje); //Se indica que el cuerpo del correo tendra formato HTML
 
 if ($mail->Send()) {//Enviamos el correo por PHPMailer
-    $respuesta = "El mensaje a sido enviado desde tu cuenta ";
+    $respuesta = "El mensaje a sido enviado desde tu cuenta de Gmail :)";
 } else {
-    $respuesta = "El mensaje no a sido enviado :( ";
+    $respuesta = "El mensaje no a sido enviado :(";
+    $respuesta .= "Error: " . $mail->ErrorInfo;
 }
-echo $respuesta.$pass;
+
+echo $respuesta;
 ?>
