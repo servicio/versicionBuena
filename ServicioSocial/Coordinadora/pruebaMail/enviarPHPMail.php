@@ -1,3 +1,4 @@
+<!--Re:-->
 <?php
 
 include "../../Utilerias/generarPass.php";
