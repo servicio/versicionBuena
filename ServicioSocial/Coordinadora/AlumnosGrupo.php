@@ -1,5 +1,6 @@
 <?php //
 include '../DaoConnection/coneccion.php';
+include '../Coordinadora/plantillaEncabezado.php';
 $coneccion = new coneccion();
 //session_start();
 ?>
@@ -99,4 +100,7 @@ $('#bien').hide('slow');
         </div>
     </center>
 </body> 
+<?php 
+        include '../Coordinadora/plantillaFooter.php';
+?>
 </html>
