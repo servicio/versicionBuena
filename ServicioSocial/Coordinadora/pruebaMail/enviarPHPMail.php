@@ -1,11 +1,23 @@
+<!--Re:-->
 <?php
 
-include "../Utilerias/generarPass.php";
+include "../../Utilerias/generarPass.php";
 include "./class.phpmailer.php";
 include "./class.smtp.php";
+include '../DaoConnection/coneccion.php';
+
+$usuari = $_GET["nombre"];
+$cn = new coneccion();
+$sql = "SELECT * FROM datosregistrousuario WHERE usuario='$usuari'";
+$datos = mysql_query($sql, $cn->Conectarse());
+
+while ($rs = mysql_fetch_array($datos)) {
+     $rs[6];
+}
+
 
 $genera = new Utilerias();
-$pass = $genera->genera_password();
+$pass = $genera->genera_password(6, $tipo = "alfanumerico");
 $de = "shanaxchornos@gmail.com";
 $para = "racoonmx@hotmail.com"; //$_GET["email"];
 $asunto = "Contraseña";
@@ -15,9 +27,7 @@ $cabeceras .= "Content-type: text/html; charset=ISO-8859-1\r\n";
 $cabeceras .= "From: $de \r\n";
 
 
-
 ////Trabajando con PHPMailer
-
 $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->IsHTML = true;
@@ -40,5 +50,6 @@ if ($mail->Send()) {//Enviamos el correo por PHPMailer
     $respuesta = "El mensaje no a sido enviado :(";
     $respuesta .= "Error: " . $mail->ErrorInfo;
 }
+
 echo $respuesta;
 ?>

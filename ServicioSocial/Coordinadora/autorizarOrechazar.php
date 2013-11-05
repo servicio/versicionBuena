@@ -4,11 +4,23 @@
 
 <script src="../bootsTrap2/js/jquery.min.js"></script>
 <script src="../bootsTrap2/js/bootstrap.js"></script>
+<?php $usuario = $_GET["idusuario"]; ?>
+<script language="JavaScript">
+    $(document).ready(function() {
+        $("#Aceptar").click(function() {
+            var nombre = 'admin';
+            var info = "nombre=" + nombre;
+            //load('verificacionLogin.php?usua=' + usua + '&pass=' + pass);
+            $.get('enviarPHPMail.php', info, function() {
+                alert("asddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+            });
+        });
+    });
+</script>
+
 <?php
 include '../DaoConnection/coneccion.php';
 include './plantillaEncabezado.php';
-
-$usuario = $_GET["idusuario"];
 ?>
 <div class="container" style="background-color: white; margin-top: -20px;">
     <!--<img src="" class="img-rounded" width="140px;" height="140px;">-->
@@ -25,7 +37,7 @@ $usuario = $_GET["idusuario"];
                 echo '<table><tr><td>';
                 echo "<img src=" . $row['foto'] . " class='img-thumbnail' width='140px;' height='140px;'></td>";
 
-                echo '<td>'.$row["nombres"] . "<br />";
+                echo '<td>' . $row["nombres"] . "<br />";
 
                 echo $row["apellidoPaterno"] . "<br />";
 
@@ -71,8 +83,8 @@ $usuario = $_GET["idusuario"];
         </center>
     </div>
     <center>
-        <button id="guardar" class="btn btn-large btn-primary btn btn-success" type="button">Validar</button>            
-        <button id="guardar" class="btn btn-large btn-primary btn btn-danger" type="button">No Validar</button>            
+        <button id="Aceptar" class="btn btn-large btn-primary btn btn-success" type="button">Validar</button>            
+        <button id="Rechazar" class="btn btn-large btn-primary btn btn-danger" type="button">No Validar</button>            
     </center>
 </div>
 

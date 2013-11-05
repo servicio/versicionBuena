@@ -2,7 +2,7 @@
 
 class Utilerias {
 
-    function genera_password($longitud, $tipo = "alfanumerico") {
+    function genera_password($longitud, $tipo) {
 
         if ($tipo == "alfanumerico") {
             $exp_reg = "[^A-Z0-9]";
