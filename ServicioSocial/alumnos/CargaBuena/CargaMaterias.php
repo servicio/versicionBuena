@@ -25,12 +25,14 @@ $matricula = "E12081126";
 $('#mal').hide(); 
 $('#malo').hide(); 
 $('#botonazo').click(function() {
-             $('#origen option').prop('disabled', false);
-            $('#origen option').prop('selected', 'selected');
+            
            var busqueda= $("#origen option").length;
             var valor = $('#horario').val();
             if(valor != 0){
+                
                  if(busqueda <= 6 && busqueda > 4){
+                      $('#origen option').prop('disabled', false);
+            $('#origen option').prop('selected', 'selected');
             var datos = 'Asignatura=' + $('#origen').val() +
             '&valor=' + valor;
             $.get('GuardarCarga.php', datos, function(){
