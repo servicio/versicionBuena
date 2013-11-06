@@ -80,6 +80,7 @@ $().ready(function()
             <strong> Debes seleccionar el turno </strong>
         </div>
         <div>
+            <h1>maerias cargadas</h1>
             <select name="origen[]" id="origen" multiple="multiple" size="8">
                 <?php
                 $cn = new coneccion();
@@ -99,6 +100,7 @@ $().ready(function()
             <input type="button" class="pasar izq" value="Pasar"><input type="button" class="quitar der" value="Quitar"><br />
             <!--<input type="button" class="pasartodos izq" value="Todos"><input type="button" class="quitartodos der" value="Todos">-->
         </div>
+             <h1>maerias por seleccionar</h1>
         <div class="">
             <select name="destino[]" id="destino" multiple="multiple" size="8">
                  <?php
