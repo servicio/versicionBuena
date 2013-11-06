@@ -81,12 +81,12 @@ $().ready(function()
             <select name="origen[]" id="origen" multiple="multiple" size="8">
                 <?php
                 $cn = new coneccion();
-                 $sql = "SELECT m.materia, m.semestre, m.id FROM historial h, materias m where h.usuario = '$matricula' and h.idAcreditacion <=2 and h.calificacion < 70 and m.id = h.idMateria ";
+                 $sql = "SELECT concat_ws('-_- ', m.semestre, m.materia) as fusion, m.materia, m.semestre, m.id FROM historial h, materias m where h.usuario = '$matricula' and h.idAcreditacion <=2 and h.calificacion < 70 and m.id = h.idMateria ";
        
                 $datos2 = mysql_query($sql, $cn->Conectarse());
                 While ($rs2 = mysql_fetch_array($datos2)) {
                     ?>
-                    <option value="<?php echo $rs2["materia"] ?>" disabled="true"><?php echo $rs2["materia"] ?></option>
+                    <option value="<?php echo $rs2["materia"] ?>" disabled="true"><?php echo $rs2["fusion"] ?></option>
                     <?php
                 }
                 ?>
@@ -101,12 +101,12 @@ $().ready(function()
             <select name="destino[]" id="destino" multiple="multiple" size="8">
                  <?php
                 $cn = new coneccion();
-                 $sql = "SELECT distinct m.materia, m.semestre, m.id FROM materias m,historial h WHERE idAcreditacion <=2 and h.calificacion > 70 and m.id NOT IN (SELECT idMateria FROM historial where usuario='$matricula' )LIMIT 0 , 10";
+                 $sql = "SELECT distinct concat_ws('-_- ', m.semestre, m.materia) as fusion,  m.materia, m.semestre, m.id FROM materias m,historial h WHERE idAcreditacion <=2 and h.calificacion > 70 and m.id NOT IN (SELECT idMateria FROM historial where usuario='$matricula' )LIMIT 0 , 10";
        
                 $datos = mysql_query($sql, $cn->Conectarse());
                 While ($rs = mysql_fetch_array($datos)) {
                     ?>
-                <option value="<?php echo $rs["materia"] ?>" ><?php echo $rs["materia"] ?></option>
+                <option value="<?php echo $rs["materia"] ?>" ><?php echo $rs["fusion"] ?></option>
                     <?php
                 }
                 ?>
