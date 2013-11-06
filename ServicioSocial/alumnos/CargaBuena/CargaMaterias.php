@@ -97,7 +97,7 @@ $().ready(function()
             </select>
         </div>
         <div>
-            <input type="button" class="pasar izq" value="Pasar"><input type="button" class="quitar der" value="Quitar"><br />
+            <input type="button" class="pasar izq" value="Flecha abajo"><input type="button" class="quitar der" value="flecha arriba"><br />
             <!--<input type="button" class="pasartodos izq" value="Todos"><input type="button" class="quitartodos der" value="Todos">-->
         </div>
              <h1>maerias por seleccionar</h1>
