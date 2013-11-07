@@ -39,7 +39,6 @@
         <h3 id="myModalLabel">Regitro de Usuario</h3>
     </div>
     <form class="alguna" name="guardar">
-
         <div class="modal-body" ><center>
                 <div class="row-fluid">
                     <div class="span6">
@@ -58,29 +57,27 @@
                     </div>
                 </div> 
                 <div class="row-fluid">
-                    <div style="margin-left: 21px" class="span3"><input  style="height: 30px" id="email" type="email" name="Email" placeholder="Email"/> </div> 
-                </div> 
+                    <div class="span6">
+                        <input  style="height: 30px" id="email" type="email" name="Email" placeholder="Email"/> </div> 
+                </div>
                 <div class="row-fluid">
                     <div align="center" id="cuadro_camara">    
-                        <div id="visualizacionCamara" style="padding-top: 5%">
+                        <div id="visualizacionCamara" style="padding-top: 1%">
                             <script language="JavaScript">
                                 document.write(webcam.get_html(250, 250));//dimensiones de la camara
                             </script>
                         </div>
-                        <!--<form>-->
                         <br>
                         <input type=button value="Tomar Foto" onClick="webcam.freeze()" class="btn btn-info">
-                        &nbsp;&nbsp;
-                        &nbsp;&nbsp;
                         <input type=button value="Borrar" onClick="webcam.reset()" class="btn btn-warning">
+                        <br>
+                        <br>
                     </div>
                 </div> 
-                <div class="modal-footer">
-                    <br>
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
-                    <input id="guardar" type=button value="Guardar "  name="dato" class="btn btn-success" data-dismiss="modal"/>
-                </div>
-            </center>
+        </div> 
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+            <input id="guardar" type=button value="Guardar "  name="dato" class="btn btn-success" data-dismiss="modal"/>
         </div>
-    </form>
 </div>
+
