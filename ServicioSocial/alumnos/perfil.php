@@ -5,81 +5,96 @@ include './plantilla.php';
 $validacion = new validacionseSessionAlumnos();
 $validacion->verificacionDeLogueAlumnos();
 ?>
-<link rel="stylesheet" type="text/css" href="jquery.lightbox-0.5.css" media="screen" />
-<script type="text/javascript" src="lib/alertify.js"></script>
-<link rel="stylesheet" href="themes/alertify.core.css" />
-<link rel="stylesheet" href="themes/alertify.default.css" />
-<script language="JavaScript">
-    $(document).ready(function() {
-        $("#prr").click(function() {
-            var nombre = $("#nombre").val();
-            var app = $("#app").val();
-            var apm = $("#apm").val();
-            var mail = $("#mail").val();
-            var info = "nombre=" + nombre + "&app=" + app + "&apm=" + apm + "&mail=" + mail;
-            $.get('actualizaDatosPersonales.php', info, function() {
-                alertify.success("Los datos se actualizaron correctamente");
-            });
-        });
-    });
-</script>
-<style>
-    .stlconten{
-        background-color: white;
-        -webkit-background-size: cover; 
-        -moz-background-size: cover; 
-        -o-background-size: cover; 
-        background-size: cover;
-        margin-top: -20px
-    }
-</style>
-<div class="container stlconten"> 
-    <div class="span12" style="margin: auto">
-        <?php
-        $usuario = $_SESSION["UsuarioAlumno"];
-        include '../DaoConnection/coneccion.php';
-        $cn = new coneccion();
-        $sql = "SELECT * FROM datosregistrousuario WHERE usuario='$usuario'";
-        $datos = mysql_query($sql, $cn->Conectarse());
-        while ($rs = mysql_fetch_array($datos)) {
-            ?>
-            <div style="margin: 3% 3% 3% 3%">
-                <h3>Editar Perfil</h3>
-                <div class="span2 pagination-centered" style="margin: 1% 1% 1% 1%">
-                    <img src="<?php echo $rs[6]; ?>" class="img-polaroid">
-                </div>
-                <div class="span6" style="margin: 1% 1% 1% 1%">
-                    <div class="well well-sm">
-                        <div class="input-group">
-                            <span class="input-group-addon" style="color: #b3b3b3">Usuario</span>
-                            <input type="text" value="<?php echo $rs[1]; ?>" disabled="true" title="Este campo no puede ser editado"/><br>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon" style="color: #b3b3b3">Nombre</span>
-                            <input id="nombre" type="text" value="<?php echo $rs[2]; ?>"/><br>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon" style="color: #b3b3b3">Apellido P.</span>
-                            <input id="app" type="text" value="<?php echo $rs[3]; ?>"/><br>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon" style="color: #b3b3b3">Apellido M.</span>
-                            <input id="apm" type="text" value="<?php echo $rs[4]; ?>"/><br>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon" style="color: #b3b3b3">Correo Electronico</span>
-                            <input id="mail" type="text" value="<?php echo $rs[5]; ?>"/>
-                        </div>
-                    </div>
-                    <input id="prr" type="button"  value="Guardar "  name="dato" class="btn btn-primary"/>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Portal de Alumnos Ing. Industrial</title>
+        <link rel="stylesheet" type="text/css" href="../bootstrap2/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../bootstrap2/css/bootstrap-responsive.css"/>
+
+        <style>
+            .edgeLoad-EDGE-3614109 { visibility:hidden; }
+            body{ 
+                background: url(galeria/backgroundfinal.png)  center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+            }
+            .cabecera{
+                background: url(galeria/fondo.png) center center fixed; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                height: 40%;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <header>
+        <div class="container cabecera">
+            <div class="">
+                <div id="Stage" class="EDGE-3614109">
                 </div>
             </div>
-            <?php
-        }
-        ?>
-    </div>
-</div>
-<?php
-include './plantillaFooter.php';
-?>
-
+        </div>
+    </header>
+    <body>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <div class="navbar navbar-inverse">
+                    <div class="navbar-inner">
+                        <!--                        .btn-navbar is used as the toggle for collapsed navbar content -->
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <!--                        Be sure to leave the brand out there if you want it shown -->
+                        <ul class="nav">
+                            <li><a href="index.php">Inicio</a></li>
+                            <!--                            <li class="dropdown">
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panel de usuario<b class="caret"></b></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a href="perfil.php">Editar perfil</a></li>
+                                                                <li><a href="cerrarSesion.php">Cerrar sesion</a></li>
+                                                            </ul>
+                                                        </li>-->
+                        </ul>
+                        <!--                        Everything you want hidden at 940px or less, place within here -->
+                        <div class="nav-collapse collapse">
+                            <ul class="nav">
+                                <li class="divider-vertical"></li>
+                                <li><a href="#myModal" data-toggle="modal">Regitro de Usuario</a> </li>
+                                <li class="divider-vertical"></li>
+                                <li><a href="">Calificaciones</a> </li>
+                                <li class="divider-vertical"></li>
+                                <li><a href="cargaArchivos.php">Creditos Extra</a> </li>
+                                <li class="divider-vertical"></li>
+                                <li><a href="cargaMaterias.php">Creacion de grupos</a> </li>
+                                <li class="divider-vertical"></li>
+                                <li><a href="encuestaTutorias.php">Tutorias</a> </li>
+                            </ul>
+                        </div>
+                        <ul class="nav">
+                            <li class="divider-vertical"></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Panel de usuario<b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="perfil.php">Editar perfil</a></li>
+                                    <li><a href="cerrarSesion.php">Cerrar sesion</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--==================================================-->
+        <script src="../bootstrap2/js/jquery.js"></script>
+        <script src="../bootsTrap2/js/bootstrap.js"></script>
+        <script type="text/javascript" charset="utf-8" src="koko_edgePreload.js"></script>
+    </body>
+</html>
+<?php include './datosPersonales.php'; ?>
