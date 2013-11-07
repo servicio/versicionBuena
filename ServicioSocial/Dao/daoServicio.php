@@ -12,8 +12,8 @@ class daoServicio {
         $datos = mysql_query($sql, $cn->Conectarse());
         $columnas = mysql_affected_rows();
         while ($rs = mysql_fetch_array($datos)) {
-            $_SESSION["idMaestroSession"] = $rs[5];
-            $_SESSION["nombreMaestro"] = $rs[6];
+            $_SESSION["idMaestroSession"] = $rs[4];
+            $_SESSION["nombreMaestro"] = $rs[5];
         }
         if ($columnas > 0) {
             $paso = true;
@@ -111,6 +111,13 @@ class daoServicio {
         $cn = new coneccion();
         $sql = "INSERT INTO usuarios (usuario,pass,tipo) VALUES ('" . $u->getUsuario() . "','" . $u->getPass() . "','" . $u->getTipo() . "' )";
         mysql($sql, $cn->Conectarse());
+        $cn->cerrarBd();
+    }
+    //jose!!!!!!!!!!!!!!!!!!!!!!!!!
+function guardarEncuestaTUTO(guardar $t) {
+        $cn = new coneccion();
+        $sql = "INSERT INTO cuestionariotutorias (matricula, pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9, pregunta10, pregunta11, pregunta12, pregunta13, pregunta14, pregunta15, pregunta16, pregunta17, pregunta18, pregunta19, pregunta20) VALUES ('" . $t->getMatricula() . "','" . $t->getpregunta1() . "','" . $t->getpregunta2() . "','" . $t->getEpregunta3() . "','" . $t->getpregunta4() . "','" . $t->getpregunta5() . "','" . $t->getpregunta6() . "','" . $t->getpregunta7() . "','" . $t->getpregunta8() . "','" . $t->getpregunta9() . "','" . $t->getpregunta10() . "','" . $t->getpregunta11() . "','" . $t->getpregunta12() . "','" . $t->getpregunta13() . "','" . $t->getpregunta14() . "','" . $t->getpregunta15() . "','" . $t->getpregunta16() . "','" . $t->getpregunta17() . "','" . $t->getpregunta18() . "','" . $t->getpregunta19() . "','" . $t->getpregunta20() . "')";
+        mysql_query($sql, $cn->Conectarse());
         $cn->cerrarBd();
     }
 

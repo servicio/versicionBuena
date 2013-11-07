@@ -13,6 +13,9 @@ $cn = new coneccion();
 <html>
     <head>
         <script src="../bootsTrap2/js/jquery.min.js"></script>
+        <link rel="stylesheet" href="themes/alertify.core.css" />
+        <link rel="stylesheet" href="themes/alertify.default.css" />
+        <script src="lib/alertify.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
         <script>
             $(document).ready(function() {
@@ -22,7 +25,7 @@ $cn = new coneccion();
                 $('#tareasAsignadas').val('');
                 $("#guardar").click(function() {
 //                    alert("Hola");
-                    var datos ='usuarios=' + $('#usuarios').val() +
+                    var datos = 'usuarios=' + $('#usuarios').val() +
                             '&fecha=' + $('#fecha').val() +
                             '&numeroSesion=' + $('#numeroSesion').val() +
                             '&descripcion=' + $('#descripcion').val() +
@@ -31,7 +34,8 @@ $cn = new coneccion();
                             '&tareasAsignadas=' + $('#tareasAsignadas').val() +
                             '&numeroSession=' + $('#numeroSession').val();
                     $.get('guardarSession.php', datos, function() {
-                        alert("Datos Agregados");
+                        alertify.success("Exito! Datos insertados Satisfactoriamente");
+//                      alert("Datos Agregados");
                     });
                 });
 
@@ -63,7 +67,7 @@ $cn = new coneccion();
                         while ($rs = mysql_fetch_array($datos)) {
                             ?>
                             <option value="<?php echo $rs["matricula"]; ?>"><?php echo $rs["Nombre"] . "&nbsp;" . $rs["apellidoPaterno"] . "&nbsp;" . $rs["apellidoMaterno"]; ?></option>
-                        <?php
+                            <?php
                         }
                         $cn->cerrarBd()
                         ?>
@@ -106,5 +110,5 @@ $cn = new coneccion();
             </div>
         </div>
     </div>
-<?php include './plantillaFooter.php'; ?>
+    <?php include './plantillaFooter.php'; ?>
 </html>
