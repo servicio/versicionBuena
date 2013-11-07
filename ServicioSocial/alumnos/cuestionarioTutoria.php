@@ -3,7 +3,7 @@ session_start();
 include './plantilla.php';
 include './validacionseSessionAlumnos.php';
 $var = new validacionseSessionAlumnos();
-$var->verificacionSessionAlumnos();
+$var->verificacionDeLogueAlumnos();
 ?>
 <html>
     <head>    
