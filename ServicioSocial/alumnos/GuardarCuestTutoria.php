@@ -3,8 +3,10 @@ session_start();
 include '../Dao/daoServicio.php';
 include '../clases/CuestrionarioTutoria.php';
 $dao = new daoServicio();
+
 $guardar = new CuestrionarioTutoria();
 $usuario=$_SESSION["UsuarioAlumno"];
+
 ?>
 <script>
 var user = "<?php echo $usuario ?>";
