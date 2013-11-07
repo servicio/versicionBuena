@@ -8,11 +8,17 @@
 <script language="JavaScript">
     $(document).ready(function() {
         $("#Aceptar").click(function() {
-            var nombre = 'admin';
-            var info = "nombre=" + nombre;
+            var nombre = '<?php echo $usuario; ?>';
+            var info = "nombre=" + nombre+"&acepto=1";
             //load('verificacionLogin.php?usua=' + usua + '&pass=' + pass);
             $.get('enviarPHPMail.php', info, function() {
-                alert("asddddddddddddddddddddddddddddddddddddddddddddddddddddddd");
+            });
+        });
+        $("#Rechazar").click(function() {
+            var nombre = '<?php echo $usuario; ?>';
+            var info = "nombre=" + nombre+"&acepto=0";
+            //load('verificacionLogin.php?usua=' + usua + '&pass=' + pass);
+            $.get('enviarPHPMail.php', info, function() {
             });
         });
     });
@@ -29,7 +35,7 @@ include './plantillaEncabezado.php';
             <br />
             <?php
             $cn = new coneccion();
-            $sql = "SELECT * FROM datosregistrousuario where usuario = '$usuario' ";
+            $sql = "SELECT * FROM datosregistrousuario where usuario = '$usuario'";
             $datos = mysql_query($sql, $cn->Conectarse());
             while ($row = mysql_fetch_array($datos)) {
                 echo "<center><div style='width:60%'>

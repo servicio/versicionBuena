@@ -48,11 +48,7 @@ $('#botonazo').click(function() {
             else{
             $('#malo').show('slow');
                $('#malo').hide('slow');
-            
             }
-              
-          
-            
            });
         
 $().ready(function() 

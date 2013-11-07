@@ -6,20 +6,20 @@ include "./class.phpmailer.php";
 include "./class.smtp.php";
 include '../DaoConnection/coneccion.php';
 
-$usuari = $_GET["nombre"];
-$cn = new coneccion();
-$sql = "SELECT * FROM datosregistrousuario WHERE usuario='$usuari'";
-$datos = mysql_query($sql, $cn->Conectarse());
-
-while ($rs = mysql_fetch_array($datos)) {
-     $rs[6];
-}
+//$usuari = $_GET["nombre"];
+//$cn = new coneccion();
+//$sql = "SELECT * FROM datosregistrousuario WHERE usuario='$usuari'";
+//$datos = mysql_query($sql, $cn->Conectarse());
+//
+//while ($rs = mysql_fetch_array($datos)) {
+//     $rs[6];
+//}
 
 
 $genera = new Utilerias();
 $pass = $genera->genera_password(6, $tipo = "alfanumerico");
 $de = "shanaxchornos@gmail.com";
-$para = "racoonmx@hotmail.com"; //$_GET["email"];
+$para = "comodoro_21@hotmail.com"; //$_GET["email"];
 $asunto = "Contraseña";
 $mensaje = "Tu password unico: $pass";
 $cabeceras = "MIME-Version: 1.0\r\n";

@@ -39,12 +39,13 @@ while ($rsInfo = mysql_fetch_array($ifo)) {
 //    }
     $infoMaterias[$contadorInfo] = $rsInfo[1];
     if ($rsInfo["2"] == 1) {
-        $repeticion[$contadorInfo] = "*";
+//        $repeticion[$contadorInfo] = "*";
+        $repeticion[$contadorInfo] = "cn|$rsInfo[1]|";
         $materiasColores[$contadorInfo] = "#64FE2E";
     }
     if ($rsInfo["2"] == 2) {
         $repeticion[$contadorInfo] = "**";
-        $materiasColores[$contadorInfo] = "#FFCO2B";
+        $materiasColores[$contadorInfo] = "#FFC02B";
     }
     if ($rsInfo["2"] == 3) {
         $repeticion[$contadorInfo] = "***";

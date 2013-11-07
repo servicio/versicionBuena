@@ -12,8 +12,8 @@ class daoServicio {
         $datos = mysql_query($sql, $cn->Conectarse());
         $columnas = mysql_affected_rows();
         while ($rs = mysql_fetch_array($datos)) {
-            $_SESSION["idMaestroSession"] = $rs[5];
-            $_SESSION["nombreMaestro"] = $rs[6];
+            $_SESSION["idMaestroSession"] = $rs[4];
+            $_SESSION["nombreMaestro"] = $rs[5];
         }
         if ($columnas > 0) {
             $paso = true;
