@@ -1,4 +1,7 @@
 <?php
+include './validacionseSessionAlumnos.php';
+$validacion = new validacionseSessionAlumnos();
+$validacion->verificacionDeLogueAlumnos();
 include './plantilla.php';
 session_start();
 include '../DaoConnection/coneccion.php';

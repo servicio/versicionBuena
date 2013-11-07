@@ -21,8 +21,7 @@ $var->verificacionSessionAlumnos();
                 Totalmente en desacuerdo<br /></center></p>
 
         <div class="span12" style="margin: auto">
-            <form name="cuestionario" action="GuardarCuestTutoria.php" style="margin-left: 50px; margin-top: 50px">
-
+            <form  name="cuestionario" action="GuardarCuestTutoria.php" style="margin-left: 50px; margin-top: 50px">
                 <h6>1. Muestra el tutor buena disposición para atender a los alumnos</h6>
                 <input type="radio" name="Disposicion" value="1" id="RadioGroup1_1" onClick="opcion1.disabled = true">
                 Totalmente de acuerdo<br>
@@ -58,8 +57,8 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="respeto" value="5" id="RadioGroup3_5" onClick="opcion3.disabled = true">
                 Totalmente en desacuerdo<br>
-                
-                 <h6>4. Muestra el tutor interés en los problemas académicos y personales que afectan el rendimiento de los alumnos</h6>
+
+                <h6>4. Muestra el tutor interés en los problemas académicos y personales que afectan el rendimiento de los alumnos</h6>
                 <input type="radio" name="interes" value="1" id="RadioGroup4_1" onClick="opcion4.disabled = true">
                 Totalmente de acuerdo<br>
                 <input type="radio" name="interes" value="2" id="RadioGroup4_2" onClick="opcion4.disabled = true">
@@ -70,7 +69,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="interes" value="5" id="RadioGroup4_5" onClick="opcion4.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>5. Muestra el tutor capacidad para escuchar los problemas de los alumnos</h6>
                 <input type="radio" name="capacidad" value="1" id="RadioGroup5_1" onClick="opcion5.disabled = true">
                 Totalmente de acuerdo<br>
@@ -82,7 +81,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="capacidad" value="5" id="RadioGroup5_5" onClick="opcion5.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>6. Muestra el tutor disposición a mantener una comunicación permanente con el alumno  </h6>
                 <input type="radio" name="disposicion" value="1" id="RadioGroup6_1" onClick="opcion6.disabled = true">
                 Totalmente de acuerdo<br>
@@ -94,7 +93,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="disposicion" value="5" id="RadioGroup6_5" onClick="opcion6.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>7. Tiene el tutor capacidad para resolver dudas académicas del alumno</h6>
                 <input type="radio" name="resolver" value="1" id="RadioGroup7_1" onClick="opcion7.disabled = true">
                 Totalmente de acuerdo<br>
@@ -106,7 +105,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="resolver" value="5" id="RadioGroup7_5" onClick="opcion7.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>8. Tiene el tutor capacidad para orientar al alumno en metodología y técnicas de estudio</h6>
                 <input type="radio" name="orientar" value="1" id="RadioGroup8_1" onClick="opcion8.disabled = true">
                 Totalmente de acuerdo<br>
@@ -118,7 +117,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="orientar" value="5" id="RadioGroup8_5" onClick="opcion8.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>9. Tiene el tutor capacidad para diagnosticar las dificultades y realizar las acciones pertinentes para resolverlas</h6>
                 <input type="radio" name="dificultades" value="1" id="RadioGroup9_1" onClick="opcion9.disabled = true">
                 Totalmente de acuerdo<br>
@@ -130,7 +129,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="dificultades" value="5" id="RadioGroup9_5" onClick="opcion9.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>10. Tiene el tutor capacidad para estimular el estudio independiente</h6>
                 <input type="radio" name="estimular" value="1" id="RadioGroup10_1" onClick="opcion10.disabled = true">
                 Totalmente de acuerdo<br>
@@ -142,7 +141,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="estimular" value="5" id="RadioGroup10_5" onClick="opcion10.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>11. Posee el tutor formación profesional en su especialidad</h6>
                 <input type="radio" name="formacion" value="1" id="RadioGroup11_1" onClick="opcion11.disabled = true">
                 Totalmente de acuerdo<br>
@@ -154,7 +153,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="formacion" value="5" id="RadioGroup11_5" onClick="opcion11.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>12. Posee el tutor dominio de métodos pedagógicos para la atención individualizada o grupal</h6>
                 <input type="radio" name="dominio" value="1" id="RadioGroup12_1" onClick="opcion12.disabled = true">
                 Totalmente de acuerdo<br>
@@ -166,7 +165,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="dominio" value="5" id="RadioGroup12_5" onClick="opcion12.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>13. Es fácil localizar al tutor que tiene asignado</h6>
                 <input type="radio" name="localizar" value="1" id="RadioGroup13_1" onClick="opcion13.disabled = true">
                 Totalmente de acuerdo<br>
@@ -178,7 +177,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="localizar" value="5" id="RadioGroup13_5" onClick="opcion13.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>14. El tutor conoce suficientemente bien la normatividad institucional para aconsejarle las opciones adecuadas a sus problemas escolares</h6>
                 <input type="radio" name="normativa" value="1" id="RadioGroup14_1" onClick="opcion14.disabled = true">
                 Totalmente de acuerdo<br>
@@ -190,7 +189,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="normativa" value="5" id="RadioGroup14_5" onClick="opcion14.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>15. La orientación recibida de parte del tutor le ha permitido realizar una selección adecuada de cursos y créditos</h6>
                 <input type="radio" name="seleccion" value="1" id="RadioGroup15_1" onClick="opcion15.disabled = true">
                 Totalmente de acuerdo<br>
@@ -202,7 +201,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="seleccion" value="5" id="RadioGroup15_5" onClick="opcion15.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>16. El tutor lo canaliza a las instancias adecuadas cuando tiene algún problema que rebasa su área de acción. Solamente responda esta pregunta si lo ha requerido</h6>
                 <input type="radio" name="canaliza" value="1" id="RadioGroup16_1" onClick="opcion16.disabled = true">
                 Totalmente de acuerdo<br>
@@ -214,7 +213,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="canaliza" value="5" id="RadioGroup16_5" onClick="opcion16.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>17. Su participación en el programa de tutoría ha mejorado su desempeño académico</h6>
                 <input type="radio" name="mejorado" value="1" id="RadioGroup17_1" onClick="opcion17.disabled = true">
                 Totalmente de acuerdo<br>
@@ -226,7 +225,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="mejorado" value="5" id="RadioGroup17_5" onClick="opcion17.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>18. Su integración al Tecnológico ha mejorado con el programa de tutoría</h6>
                 <input type="radio" name="programa" value="1" id="RadioGroup18_1" onClick="opcion18.disabled = true">
                 Totalmente de acuerdo<br>
@@ -238,7 +237,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="programa" value="5" id="RadioGroup18_5" onClick="opcion18.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6>19. Es satisfactorio el programa de tutoría</h6>
                 <input type="radio" name="satisfactorio" value="1" id="RadioGroup19_1" onClick="opcion19.disabled = true">
                 Totalmente de acuerdo<br>
@@ -250,7 +249,7 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="satisfactorio" value="5" id="RadioGroup19_5" onClick="opcion19.disabled = true">
                 Totalmente en desacuerdo<br>
-                
+
                 <h6> 20. El tutor que le fue asignado es adecuado</h6>
                 <input type="radio" name="asignado" value="1" id="RadioGroup20_1" onClick="opcion20.disabled = true">
                 Totalmente de acuerdo<br>
@@ -262,12 +261,12 @@ $var->verificacionSessionAlumnos();
                 En desacuerdo<br>
                 <input type="radio" name="asignado" value="5" id="RadioGroup20_5" onClick="opcion20.disabled = true">
                 Totalmente en desacuerdo<br>
-                
-                </div>
                 <input class="btn btn-primary" type="submit" name="guardar" value="Guardar">
-                </div>
-                </body>
-                </html>
-                <?php
-                include './plantillaFooter.php';
-                ?>
+            </form>  
+        </div>
+    </div>
+</body>
+</html>
+<?php
+include './plantillaFooter.php';
+?>
