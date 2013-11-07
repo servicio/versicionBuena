@@ -18,19 +18,42 @@ $matricula = "E12081126";
 <script src="../../bootsTrap2/js/bootstrap.min.js"></script>
         <script>
     $(document).ready(function() {
-        $('#botonazo').click(function() {
-             $('#origen option').prop('disabled', false);
-            $('#origen option').prop('selected', 'selected');
+        
+    
+
+ $('#bien').hide();
+$('#mal').hide(); 
+$('#malo').hide(); 
+$('#botonazo').click(function() {
+            
+           var busqueda= $("#origen option").length;
             var valor = $('#horario').val();
-              
-          
-           
+            if(valor != 0){
+                
+                 if(busqueda <= 6 && busqueda > 4){
+                      $('#origen option').prop('disabled', false);
+            $('#origen option').prop('selected', 'selected');
             var datos = 'Asignatura=' + $('#origen').val() +
             '&valor=' + valor;
             $.get('GuardarCarga.php', datos, function(){
-                
+                $('#bien').show('slow');
+                $('#bien').hide('slow');
             })
-        });
+           }else{
+               $('#mal').show('slow');
+               $('#mal').hide('slow'); 
+           } 
+                
+            }
+            else{
+            $('#malo').show('slow');
+               $('#malo').hide('slow');
+            
+            }
+              
+          
+            
+           });
         
 $().ready(function() 
     {
@@ -46,17 +69,27 @@ $().ready(function()
 
     <body style="background-color:  #e5e5e5">
         <div> 
-         
+         <div id="bien" class="alert alert-success">
+            <strong>Se han Guardado las materias satisfactoriamente</strong>
+        </div>
+            <div id="mal" class="alert alert-error">
+            <strong> Deben ser 5 ó 6 materias seleccionadas</strong>
+        </div>
+            
+            <div id="malo" class="alert alert-error">
+            <strong> Debes seleccionar el turno </strong>
+        </div>
         <div>
+            <h1>maerias cargadas</h1>
             <select name="origen[]" id="origen" multiple="multiple" size="8">
                 <?php
                 $cn = new coneccion();
-                 $sql = "SELECT m.materia, m.semestre, m.id FROM historial h, materias m where h.usuario = '$matricula' and h.idAcreditacion <=2 and h.calificacion < 70 and m.id = h.idMateria";
+                 $sql = "SELECT concat_ws('-_- ', m.semestre, m.materia) as fusion, m.materia, m.semestre, m.id FROM historial h, materias m where h.usuario = '$matricula' and h.idAcreditacion <=2 and h.calificacion < 70 and m.id = h.idMateria ";
        
                 $datos2 = mysql_query($sql, $cn->Conectarse());
                 While ($rs2 = mysql_fetch_array($datos2)) {
                     ?>
-                    <option value="<?php echo $rs2["materia"] ?>" disabled="true"><?php echo $rs2["materia"] ?></option>
+                    <option value="<?php echo $rs2["materia"] ?>" disabled="true"><?php echo $rs2["fusion"] ?></option>
                     <?php
                 }
                 ?>
@@ -64,19 +97,20 @@ $().ready(function()
             </select>
         </div>
         <div>
-            <input type="button" class="pasar izq" value="Pasar"><input type="button" class="quitar der" value="Quitar"><br />
+            <input type="button" class="pasar izq" value="Flecha abajo"><input type="button" class="quitar der" value="flecha arriba"><br />
             <!--<input type="button" class="pasartodos izq" value="Todos"><input type="button" class="quitartodos der" value="Todos">-->
         </div>
+             <h1>maerias por seleccionar</h1>
         <div class="">
             <select name="destino[]" id="destino" multiple="multiple" size="8">
                  <?php
                 $cn = new coneccion();
-                 $sql = "SELECT m.materia, m.semestre, m.id FROM historial h, materias m where h.usuario = '$matricula' and h.idAcreditacion <=2 and h.calificacion >= 70 and m.id = h.idMateria";
+                 $sql = "SELECT distinct concat_ws('-_- ', m.semestre, m.materia) as fusion,  m.materia, m.semestre, m.id FROM materias m,historial h WHERE idAcreditacion <=2 and h.calificacion > 70 and m.id NOT IN (SELECT idMateria FROM historial where usuario='$matricula' )LIMIT 0 , 10";
        
                 $datos = mysql_query($sql, $cn->Conectarse());
                 While ($rs = mysql_fetch_array($datos)) {
                     ?>
-                <option value="<?php echo $rs["materia"] ?>" ><?php echo $rs["materia"] ?></option>
+                <option value="<?php echo $rs["materia"] ?>" ><?php echo $rs["fusion"] ?></option>
                     <?php
                 }
                 ?>

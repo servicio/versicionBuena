@@ -38,9 +38,7 @@ $('#bien').hide('slow');
 
     <body style="background-color:  #e5e5e5">
     <center>
-        <div id="bien" class="alert alert-success">
-            <strong>Se ha creado el grupo satisfactoriamente</strong>
-        </div>
+        c
         <div class="input-append" style="float: left; margin-left: 40px">
             <input  type="text" id="IdentificadorGrupo" id="Grupo" placeholder="Identificador del Grupo"  height: 30px">
         </div>
