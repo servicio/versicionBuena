@@ -218,6 +218,16 @@ function guardarEncuestaTUTO(guardar $t) {
         return materias;
     }
     
+    //---------------------------------------------------------------------
+    function actulizarRegistroDatos(usuario $usuario) {
+        $cn = new coneccion();
+        $sql = "UPDATE datosregistrousuario  SET nombres ='" . $usuario->getNombres() . "',apellidoPaterno='" . $usuario->getApellidoPaterno() . "',apellidoMaterno='" . $usuario->getApellidoMaterno() . "',email='" . $usuario->getEmail() . "' WHERE usuario = '".$usuario->getUsuario()."'";
+        mysql_query($sql, $cn->Conectarse());
+        $cn->cerrarBd();
+    }
+
+    //---------------------------------------------------------------------
+    
 
 }
 ?>
