@@ -1,5 +1,5 @@
 <?php
-include './plantilla.php';
+include './plantillaEncabezado.php';
 include './validacionseSessionAlumnos.php';
 $validacion = new validacionseSessionAlumnos();
 $validacion->verificacionSessionAlumnos();

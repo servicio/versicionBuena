@@ -90,4 +90,4 @@
         <script type="text/javascript" charset="utf-8" src="koko_edgePreload.js"></script>
     </body>
 </html>
-<?php include './datosPersonales.php'; ?>
+<?php include './datosPersonales.php';?>
