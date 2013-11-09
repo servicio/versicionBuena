@@ -1,13 +1,12 @@
 <?php
-include '../../DaoConnection/coneccion.php';
-include './plantilla.php';
+include './DaoConnection/coneccion.php';
+include './alumnos/plantilla.php';
 $cn = new coneccion();
 $matricula = "E12081126";
 //session_start();
 ?>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <style>
             .stlconten{
                 background-color: white;
