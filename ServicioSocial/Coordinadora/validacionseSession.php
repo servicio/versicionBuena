@@ -5,7 +5,7 @@ session_start();
 class validacionseSession {
 
     function verificacionDeLogue() {
-        $usuario = $_SESSION['Usuario'];
+        $usuario = $_SESSION['UsuarioAlumno'];
         if ($usuario == null) {
             echo "
         <script>
@@ -16,7 +16,7 @@ class validacionseSession {
     }
 
     function verificacionSession() {
-        $usuarioSession = $_SESSION['Usuario'];
+        $usuarioSession = $_SESSION['UsuarioAlumno'];
         if ($usuarioSession != null) {
             header('Location: index.php');
         }

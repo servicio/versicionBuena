@@ -22,7 +22,7 @@ if ($paso == false) {
          </script>
             ";
 } else {
-    $_SESSION["Usuario"] = $usuario->getUsuario();
+    $_SESSION["UsuarioAlumno"] = $usuario->getUsuario();
     echo "
         <script>
              document.location.href='index.php';
