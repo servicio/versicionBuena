@@ -1,6 +1,5 @@
 <?php
-include '../../Dao/dao.php';
-include '../../DaoConnection/coneccion.php';
+include '../Dao/dao.php';
 
 $matricula = "E12081126";
 //$Asignaturas[] = $_POST["Asignatura"];

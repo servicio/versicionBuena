@@ -3,7 +3,7 @@ session_start();
 include '../DaoConnection/coneccion.php';
 include './plantilla.php';
 $cn = new coneccion();
-$matricula = "E12081126";
+$matricula = $_SESSION['UsuarioAlumno'];
 ?>
 <html>
     <head>
@@ -107,7 +107,7 @@ $matricula = "E12081126";
                                 $datos = mysql_query($sql, $cn->Conectarse());
                                 While ($rs = mysql_fetch_array($datos)) {
                                     ?>
-                                    <option value="<?php echo $rs["materia"] ?>" ><?php echo $rs["fusion"] ?></option>
+                                <option value="<?php echo utf8_encode($rs["materia"]); ?>" ><?php echo utf8_encode($rs["fusion"]); ?></option>
                                     <?php
                                 }
                                 ?>
@@ -120,7 +120,7 @@ $matricula = "E12081126";
                                 $datos2 = mysql_query($sql, $cn->Conectarse());
                                 While ($rs2 = mysql_fetch_array($datos2)) {
                                     ?>
-                                    <option value="<?php echo $rs2["materia"] ?>" disabled="true"><?php echo $rs2["fusion"] ?></option>
+                                <option value="<?php echo utf8_encode($rs2["materia"]); ?>" disabled="true"><?php echo utf8_encode($rs2["fusion"]) ?></option>
                                     <?php
                                 }
                                 ?>
