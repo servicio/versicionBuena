@@ -48,7 +48,7 @@ $validacion->verificacionDeLogueAlumnos();
                 <div class="span2 pagination-centered" style="margin: 1% 1% 1% 1%">
                     <img src="<?php echo $rs[6]; ?>" class="img-polaroid">
                 </div>
-                <div class="span6" style="margin: 1% 1% 1% 1%">
+                <div class="span6 offset1" style="margin: 1% 1% 1% 1%">
                     <div class="well well-sm">
                         <div class="input-group">
                             <span class="input-group-addon" style="color: #b3b3b3">Usuario</span>

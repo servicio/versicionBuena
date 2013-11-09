@@ -22,7 +22,6 @@ $validacion->verificacionSessionAlumnos();
     </script>
     <body>
         <div class="container">
-
             <center>
                 <div class="span12"  style="margin: auto; background-color: white; margin-top: -20px">
                     <div id="error" style="height: 35px" class="alert-error">

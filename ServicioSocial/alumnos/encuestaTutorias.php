@@ -65,7 +65,7 @@ include '../Dao/daoServicio.php';
     <div class="container stlconten" > 
         <div class="span12" style="margin: auto">
             <form name="cuestionario" action="guardarEncuesta.php" style="margin: 3% 3% 3% 3%">
-                <h3>Encuesta bla bla bla...</h3>
+                <h3>Encuesta Socioeconómica</h3>
                 <div class="well well-sm">
                     <h6>1.- &iquest;Con qu&iacute;en vives?</h6>
                     <input type="radio" name="LugarViviendo" value="Padre" id="RadioGroup1_0" onClick="opcion1.disabled = true">

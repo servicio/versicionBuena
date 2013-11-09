@@ -3,7 +3,8 @@
 include '../DaoConnection/coneccion.php';
 
 class dao {
-    function guardarAlumnoGrupo(alumnosinscritos $A){
+  
+            function guardarAlumnoGrupo(alumnosinscritos $A){
         $cn = new coneccion();
          $sql = "INSERT INTO alumnosinscritos(idGrupo,usuario, idMateria) 
 VALUES (
