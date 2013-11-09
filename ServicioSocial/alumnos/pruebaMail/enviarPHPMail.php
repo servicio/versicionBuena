@@ -1,15 +1,11 @@
 <?php
-include "../../Utilerias/generarPass.php";
-include "./class.phpmailer.php";
-include "./class.smtp.php";
-include '../DaoConnection/coneccion.php';
+include './class.phpmailer.php';
+include './class.smtp.php';
 
-$genera = new Utilerias();
-$pass = $genera->genera_password(6, $tipo = "alfanumerico");
-$de = "shanaxchornos@gmail.com";
-$para = "comodoro_21@hotmail.com"; //$_GET["email"];
-$asunto = "Contraseña";
-$mensaje = "Tu password unico: $pass";
+$de = "shanaxchornos@gmail.com";//$_GET["email"];
+$para = "email@coordinacion"; 
+$asunto = "Cuestionario Respondido";
+$mensaje = "El alumno $alumno ha respondido el Cuestionario";
 $cabeceras = "MIME-Version: 1.0\r\n";
 $cabeceras .= "Content-type: text/html; charset=ISO-8859-1\r\n";
 $cabeceras .= "From: $de \r\n";
@@ -28,7 +24,6 @@ $mail->AddAddress($para); //Destinatario
 $mail->Username = "shanaxchornos@gmail.com";
 $mail->Password = "catscagats"; //Aqui va la contraseña valida de tu correo
 $mail->Subject = $asunto; //El asunto de correo
-$mail->Body = $pass; //$mensaje; //El mensaje de correo
 $mail->WordWrap = 50; //# de columnas
 $mail->MsgHTML($mensaje); //Se indica que el cuerpo del correo tendra formato HTML
 
