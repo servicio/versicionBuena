@@ -9,7 +9,7 @@ $tamanio = count($Asignaturas);
 
 
 
-$seleccionados = explode(',',$_GET['Asignatura']); // convierto el string a un array.
+$seleccionados = explode(',',  utf8_decode($_GET['Asignatura'])); // convierto el string a un array.
  
     for ($i=0;$i<count($seleccionados);$i++) { 
         
