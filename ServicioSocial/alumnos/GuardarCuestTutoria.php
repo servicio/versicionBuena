@@ -3,18 +3,12 @@ session_start();
 include '../Dao/daoServicio.php';
 include '../clases/CuestionarioTutoria.php';
 $dao = new daoServicio();
-//wdasdasda
 $guardar = new CuestionarioTutoria();
 $usuario=$_SESSION["UsuarioAlumno"];
-
 ?>
-<script>
-var user = "<?php echo $usuario ?>";
-alert(user);
-</script>
 <?php
 $guardar->setMatricula($usuario);
-$guardar->setPregunta1($_GET["Disposicion"]);
+$guardar->setPregunta1($_GET["disposicion"]);
 $guardar->setPregunta2($_GET["cordialidad"]);
 $guardar->setPregunta3($_GET["respeto"]);
 $guardar->setPregunta4($_GET["interes"]);
@@ -36,4 +30,5 @@ $guardar->setPregunta19($_GET["satisfactorio"]);
 $guardar->setPregunta20($_GET["asignado"]);
 
 $dao->guardarEncuestaTUTO($guardar);
+header('Location: index.php');
 ?>

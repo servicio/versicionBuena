@@ -69,6 +69,8 @@
                             <li><a href="cargaMaterias.php">Creacion de grupos</a> </li>
                             <li class="divider-vertical"></li>
                             <li><a href="encuestaTutorias.php">Tutorias</a> </li>
+                            <li class="divider-vertical"></li>
+                            <li><a href="cuestionarioTutoria.php">Encuesta Tutoria</a> </li>
                         </ul>
                     </div>
                 </div>
