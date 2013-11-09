@@ -93,3 +93,7 @@
         </div>
     </div>
 </header>
+<?php
+
+include './datosPersonales.php';
+?>

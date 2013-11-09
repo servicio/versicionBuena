@@ -1,6 +1,5 @@
 <?php
-include '../../Dao/dao.php';
-include '../../DaoConnection/coneccion.php';
+include '../Dao/dao.php';
 
 $matricula = "E12081126";
 //$Asignaturas[] = $_POST["Asignatura"];
@@ -10,7 +9,7 @@ $tamanio = count($Asignaturas);
 
 
 
-$seleccionados = explode(',',$_GET['Asignatura']); // convierto el string a un array.
+$seleccionados = explode(',',  utf8_decode($_GET['Asignatura'])); // convierto el string a un array.
  
     for ($i=0;$i<count($seleccionados);$i++) { 
         
