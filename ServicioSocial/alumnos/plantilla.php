@@ -69,8 +69,23 @@
                             <li><a href="cargaMaterias.php">Creacion de grupos</a> </li>
                             <li class="divider-vertical"></li>
                             <li><a href="encuestaTutorias.php">Tutorias</a> </li>
-                            <li class="divider-vertical"></li>
-                            <li><a href="cuestionarioTutoria.php">Encuesta Tutoria</a> </li>
+                            <?php
+                            session_start();
+                            $usuario = $_SESSION["UsuarioAlumno"];
+                            include '../DaoConnection/coneccion.php';
+                            $cn = new coneccion();
+                            $sql = "SELECT control FROM verificacion WHERE usuario='$usuario' AND control=0";
+                            $val = mysql_affected_rows($sql, $cn->Conectarse());
+                            $val2 = 0;
+                            if ($val == $val2) {
+                                ?>
+                                <li class="divider-vertical"></li>
+                                <li><a href="cuestionarioTutoria.php">Encuesta Tutoria</a> </li>
+                                <?php
+                            } else {
+                                
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>
