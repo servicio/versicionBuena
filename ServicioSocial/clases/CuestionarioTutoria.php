@@ -1,5 +1,5 @@
 <?php
-class CuestrionarioTutoria {
+class CuestionarioTutoria {
     private $matricula;
     private $pregunta1;
     private $pregunta2;
